@@ -69,4 +69,6 @@ trait QRLImpl extends QRL:
 
       episodes match
         case 0 => qf
-        case e => learn(e - 1, length, runSingleEpisode((system.initial, qf), length)._2)
+        case e => 
+          system.environment.reset()
+          learn(e - 1, length, runSingleEpisode((system.initial, qf), length)._2)

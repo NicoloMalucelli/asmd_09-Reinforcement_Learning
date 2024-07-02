@@ -11,7 +11,8 @@ trait QRL:
 
   given random: scala.util.Random = new scala.util.Random()
 
-  trait Environment extends ((State, Action) => (Reward, State))
+  trait Environment extends ((State, Action) => (Reward, State)):
+    def reset(): Unit = {}
 
   trait MDP extends Environment:
     def transitions(s: State): Set[(Action, Probability, Reward, State)]
