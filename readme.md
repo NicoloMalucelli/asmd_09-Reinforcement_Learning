@@ -17,8 +17,8 @@ number of possible states is quite low, anyway in a normal scenario, having epsi
 not at a very early stage of the training. Normally epsilon is not kept constant but is set higher at the beginning, to
 encourage exploration of new states, and lowered while the agent learns. 
 - gamma represents the discount rate and like epsilon can range between 0 and 1. When computing the discounted reward of
-an action happened at a time t, at the immediate reward has to be summed the reward of the previous actions (t~-1~, t~-2~,...) that lead to that state multiplied
-by a factor gamma^(t - t~-i~)^. Since gamma is raised by t, older actions in the trajectory are less and less considered
+an action happened at a time t, at the immediate reward has to be summed the reward of the previous actions (t<sub>-1</sub>, t<sub>-2</sub>,...) that lead to that state multiplied
+by a factor gamma<sup>(t - t<sub>-i</sub>)</sup>. Since gamma is raised by t, older actions in the trajectory are less and less considered
 when summed to the expected reward. When gamma is equal to 1, all the actions in the trajectory have the same importance
 but the training may never converge to an optimal behaviour. When gamma is equal to 0, only the immediate reward is considered
 and the agent "can not see in the future": every choice is based just on the current state. 
